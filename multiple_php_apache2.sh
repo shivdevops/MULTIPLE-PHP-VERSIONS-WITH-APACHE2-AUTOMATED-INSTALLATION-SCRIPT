@@ -1,7 +1,7 @@
 #!/bin/bash
 
-
-	PHP_VERSION="php7.2"
+	#provide your needed php version i.e 7.2 or 5.6
+	PHP_VERSION="your-php-verson"
 
 
 	MODULE=$(dpkg -l | grep libapache2-mod-fcgid | awk '{ print$2}')
@@ -32,12 +32,20 @@ else
         echo " Already Installed"
 
 fi
+# provide the root directory path (eg:/var/www/html/ or /opt/vhost/)
+ROOT_DIRECTORY_PATH="your root directory path"
 
-ROOT_DIRECTORY_PATH="/var/www/html/"
-APACHE2_CONF_NAME="demo"
-DOMAIN_NAME="demo.com"
-SSL_PEM="/etc/ssl/certs/ssl-cert-snakeoil.pem"
-SSL_KEY="/etc/ssl/private/ssl-cert-snakeoil.key"
+#provide apache2 virtual host conf name
+APACHE2_CONF_NAME="your-name"
+
+#provide your domain name i.e domain.com domain.in etc 
+DOMAIN_NAME="your=domain"
+
+#provide your ssl pem file path fully
+SSL_PEM="your-ssl-pem-file-path"
+
+#provide your ssl key file path fully
+SSL_KEY="your-ssl-pem-file-path"
 
 
 	echo "Creating Apache2 Virtual Host"
